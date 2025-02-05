@@ -43,7 +43,11 @@ function LoginModal() {
 
   async function logIn(data) {
     dispatch(signInUser({ email: data.email, password: data.password })).then(
-      () => {
+      data => {
+        if (data.error?.message === 'Rejected') {
+          toast.error('Invalid login or password!');
+          return;
+        }
         toast.success('You Are Successfully logged in!');
         dispatch(setLoginModalOpen(false));
       }

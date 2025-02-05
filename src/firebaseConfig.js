@@ -56,6 +56,7 @@ export const signIn = async (email, password) => {
       email,
       password
     );
+
     const user = userCredential.user;
 
     return {
