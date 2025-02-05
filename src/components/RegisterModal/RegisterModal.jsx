@@ -110,7 +110,7 @@ function RegisterModal() {
                   <FaRegEye className={css.FaRegEye} />
                 ) : (
                   <svg className={css.eyesIcon} color="black">
-                    <use href="/public/sprite.svg#eye-off"></use>
+                    <use href="/sprite.svg#eye-off"></use>
                   </svg>
                 )}
               </button>
