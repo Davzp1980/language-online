@@ -110,7 +110,7 @@ function RegisterModal() {
                   <FaRegEye className={css.FaRegEye} />
                 ) : (
                   <svg className={css.eyesIcon} color="black">
-                    <use href="../../../public/sprite.svg#eye-off"></use>
+                    <use href="/sprite.svg#eye-off"></use>
                   </svg>
                 )}
               </button>
@@ -122,7 +122,7 @@ function RegisterModal() {
         </form>
         <button className={css.closeBtn} type="button" onClick={handleCloseByX}>
           <svg className={css.iconClose}>
-            <use href="../../../public/sprite.svg#close"></use>
+            <use href="/sprite.svg#close"></use>
           </svg>
         </button>
       </div>

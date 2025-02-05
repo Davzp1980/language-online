@@ -117,7 +117,7 @@ function LoginModal() {
         </form>
         <button className={css.closeBtn} type="button" onClick={handleCloseByX}>
           <svg className={css.iconClose}>
-            <use href="../../../public/sprite.svg#close"></use>
+            <use href="/sprite.svg#close"></use>
           </svg>
         </button>
       </div>
