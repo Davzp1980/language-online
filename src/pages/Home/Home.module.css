@@ -104,7 +104,7 @@
 }
 
 .bottomDiv {
-  background-image: url('dotted_line.png');
+  background-image: url('/dotted_line.png');
   width: 1312px;
   height: 116px;
   padding: 40px 122px;
