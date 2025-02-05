@@ -1,0 +1,61 @@
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  padding: 96px 128px;
+}
+
+.filtersContainer {
+  width: 300px;
+  margin-bottom: 32px;
+
+  display: flex;
+  gap: 20px;
+}
+
+.selectDesc {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: #8a8a89;
+  margin-bottom: 8px;
+}
+
+.selectContainer {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 111%;
+  color: #121217;
+}
+
+.levelContainer {
+}
+
+.priceContainer {
+  width: 300px;
+}
+
+.teachersList {
+  display: flex;
+  flex-direction: column;
+  gap: 53px;
+  margin-bottom: 64px;
+}
+
+.loadMoreBtn {
+  margin: 0 auto;
+  border: none;
+  border-radius: 12px;
+  width: 183px;
+  height: 60px;
+  background-color: #f4c550;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  color: #121417;
+}
+
+.loadMoreBtn:hover {
+  background-color: #ffdc86;
+}

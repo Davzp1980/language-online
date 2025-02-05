@@ -1,0 +1,192 @@
+.container {
+  position: relative;
+  width: 1184px;
+  margin: 0 auto;
+  padding: 24px;
+
+  display: flex;
+  /* gap: 48px; */
+  border-radius: 24px;
+  background-color: #fff;
+}
+
+.logoContainer {
+  box-sizing: border-box;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  padding: 12px;
+  border: 3px solid #fbe9ba;
+  min-width: 120px;
+  min-height: 120px;
+
+  margin-right: 48px;
+}
+
+.logo {
+  width: 96px;
+  border-radius: 100%;
+}
+
+.dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 19px;
+  right: 15px;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  background-color: #fff;
+}
+
+.greenDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #38cd3e;
+}
+
+.descriptionContainer {
+  width: 100%;
+}
+
+.descriptionHeader {
+  margin-bottom: 32px;
+}
+
+.aboutTeacher {
+  display: flex;
+}
+
+.teacherHeader {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.teacherName {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.speakLessCondDiv {
+  margin-bottom: 16px;
+}
+.textP {
+  color: #121417;
+  margin-bottom: 8px;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #121417;
+  margin-bottom: 8px;
+}
+
+.grayText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8a8a89;
+  text-decoration: none;
+}
+
+.conditions {
+  margin-bottom: 16px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #121417;
+}
+
+.teacherRating {
+  display: flex;
+  align-self: first baseline;
+  align-items: center;
+  gap: 16px;
+
+  justify-self: flex-end;
+}
+
+.ratingItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ratingItemP {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
+}
+
+.line {
+  width: 1px;
+  height: 16px;
+  background-color: rgba(18, 20, 23, 0.2);
+}
+
+.priceSpan {
+  color: #38cd3e;
+}
+
+.favoriteBtn {
+  border: none;
+  background-color: transparent;
+
+  margin-left: 48px;
+}
+
+.favoriteIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.readMoreBtn {
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 32px;
+}
+
+.levelsList {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  height: 32px;
+
+  border-radius: 35px;
+  padding: 8px 12px;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+}
+
+.listItem:first-child {
+  border: none;
+  background-color: #f4c550;
+}
+
+.experience {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
+}
