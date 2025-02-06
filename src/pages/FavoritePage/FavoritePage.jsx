@@ -7,10 +7,6 @@ import { useState } from 'react';
 import TeacherItem from '../../components/TeacherItem/TeacherItem';
 
 function FavoritePage() {
-  //   const teachersArr = useSelector(selectAllTeachers);
-
-  // console.log(teachersArr);
-
   const favorite = useSelector(selectFavorites);
 
   const languageOptions = [
@@ -55,7 +51,6 @@ function FavoritePage() {
     }),
     menuList: provided => ({
       ...provided,
-      // maxHeight: '200px', // Ограничение высоты (чтобы появлялся скролл)
       padding: '0',
     }),
     option: (provided, state) => ({
@@ -90,7 +85,6 @@ function FavoritePage() {
               defaultValue={selectedLanguageOption}
               onChange={setLanguageOption}
               options={languageOptions}
-              // components={{ DropdownIndicator: CustomDropdownIndicator }}
               placeholder={languageOptions[0].label}
             />
           </div>
@@ -101,10 +95,9 @@ function FavoritePage() {
             <Select
               className={css.selectContainer}
               styles={styles}
-              defaultValue={selectedLanguageOption}
+              defaultValue={selectedLevelOption}
               onChange={setLevelOption}
               options={levelOptions}
-              // components={{ DropdownIndicator: CustomDropdownIndicator }}
               placeholder={levelOptions[0].label}
             />
           </div>
@@ -115,16 +108,22 @@ function FavoritePage() {
             <Select
               className={css.selectContainer}
               styles={styles}
-              defaultValue={selectedLanguageOption}
+              defaultValue={selectedPriceOption}
               onChange={setPriceOption}
               options={priceOptions}
-              // components={{ DropdownIndicator: CustomDropdownIndicator }}
               placeholder={priceOptions[0].label}
             />
           </div>
         </div>
       </div>
       <div>
+        {favorite.length === 0 ? (
+          <div className={css.emptyList}>
+            <p>The favorites list is empty</p>
+          </div>
+        ) : (
+          ''
+        )}
         <ul className={css.teachersList}>
           {favorite?.map(teacher => (
             <TeacherItem key={uuidv4()} teacher={teacher} />

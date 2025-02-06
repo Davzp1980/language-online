@@ -47,6 +47,7 @@ function Teachers() {
       width: 'auto',
       fontSize: 18,
       fontWeight: 500,
+      cursor: 'pointer',
     }),
     menu: provided => ({
       ...provided,
@@ -58,7 +59,6 @@ function Teachers() {
     }),
     menuList: provided => ({
       ...provided,
-      // maxHeight: '200px', // Ограничение высоты (чтобы появлялся скролл)
       padding: '0',
     }),
     option: (provided, state) => ({
@@ -90,7 +90,7 @@ function Teachers() {
       <div className={css.filtersContainer}>
         <div className={css.languagesContainer}>
           <p className={css.selectDesc}>Languages</p>
-          <div style={{ width: '221px' }}>
+          <div className={css.selectDiv} style={{ width: '221px' }}>
             <Select
               className={css.selectContainer}
               styles={styles}

@@ -9,6 +9,7 @@ import {
 import { selectIsloggedIn, selectUser } from '../../redux/auth/selectors';
 import { MdLogout } from 'react-icons/md';
 import { logout } from '../../redux/auth/operations';
+import { disableScroll } from '../utils';
 
 function Header() {
   const isLoggedIn = useSelector(selectIsloggedIn);
@@ -24,10 +25,12 @@ function Header() {
 
   function handleLoginWindow() {
     dispatch(setLoginModalOpen(true));
+    disableScroll();
   }
 
   function handleRegisterWindow() {
     dispatch(setRegisterModalOpen(true));
+    disableScroll();
   }
 
   function handleLogout() {

@@ -6,8 +6,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { setRegisterModalOpen } from '../../redux/teachers/slice';
 import { useForm } from 'react-hook-form';
 import { FaRegEye } from 'react-icons/fa6';
-import { signUp } from '../../firebaseConfig';
 import { signUpUser } from '../../redux/auth/operations';
+import { enableScroll } from '../utils';
+import toast from 'react-hot-toast';
 
 function RegisterModal() {
   const dispatch = useDispatch();
@@ -48,18 +49,24 @@ function RegisterModal() {
         password: data.password,
         displayName: data.name,
       })
-    );
+    ).then(() => {
+      dispatch(setRegisterModalOpen(false));
+      toast.success('User successfully registered!');
+    });
+    enableScroll();
 
     reset();
   }
 
   function handleCloseByX() {
     dispatch(setRegisterModalOpen(false));
+    enableScroll();
   }
 
   function handleCloseByDrop(event) {
     if (event.target === event.currentTarget) {
       dispatch(setRegisterModalOpen(false));
+      enableScroll();
     }
   }
 

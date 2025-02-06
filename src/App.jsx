@@ -18,6 +18,7 @@ import { Toaster } from 'react-hot-toast';
 import { onAuthStateChanged } from 'firebase/auth';
 import { setUser } from './redux/auth/slice';
 import { auth } from './firebaseConfig';
+import { PrivateRoute } from './components/PrivateRouter';
 
 function App() {
   const isOpenLoginModal = useSelector(selectIsLoginModalOpen);
@@ -50,7 +51,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/teachers" element={<Teachers />} />
-          <Route path="/favorite" element={<FavoritePage />} />
+          <Route path="/login" element={<LoginModal />} />
+          <Route
+            path="/favorite"
+            element={
+              <PrivateRoute redirectTo="/" component={<FavoritePage />} />
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

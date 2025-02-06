@@ -33,7 +33,6 @@ function TeacherItem({ teacher }) {
       return;
     }
 
-    // setIsFavorite(prev => !prev);
     if (isFavoriteTeacher === true) {
       dispatch(deleteFromFavorite(teacher.avatar_url));
       isFavoriteTeacher = false;

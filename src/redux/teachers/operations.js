@@ -10,30 +10,9 @@ import {
 
 import { database } from '../../firebaseConfig';
 
-// export const fetchTeachers = createAsyncThunk(
-//   'teachers/getAll',
-//   async (_, thunkAPI) => {
-//     try {
-//       const dbRef = ref(database);
-
-//       const snapshot = await get(dbRef);
-
-//       if (snapshot.exists()) {
-//         const rawData = snapshot.val();
-
-//         return rawData;
-//       } else {
-//         return thunkAPI.rejectWithValue('No data found');
-//       }
-//     } catch (err) {
-//       return thunkAPI.rejectWithValue(err.message);
-//     }
-//   }
-// );
-
 export const fetchTeachers = createAsyncThunk(
   'teachers/fetchTeachers',
-  async ({ pageSize = 4, lastKey = null, filters }, thunkAPI) => {
+  async ({ pageSize = 4, lastKey = null }, thunkAPI) => {
     try {
       // Формируем запрос
 

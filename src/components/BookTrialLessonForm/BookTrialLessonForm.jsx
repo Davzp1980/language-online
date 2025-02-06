@@ -2,12 +2,17 @@
 import { useForm } from 'react-hook-form';
 import css from './BookTrialLessonForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setBookModalOpen } from '../../redux/teachers/slice';
+import {
+  setBookModalOpen,
+  setLoginModalOpen,
+} from '../../redux/teachers/slice';
 import { useEffect } from 'react';
 
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { selectModalBookData } from '../../redux/teachers/selectors';
+import { enableScroll } from '../utils';
+import toast from 'react-hot-toast';
 
 function BookTrialLessonForm() {
   const dispatch = useDispatch();
@@ -30,7 +35,7 @@ function BookTrialLessonForm() {
   const ValidationSchema = yup.object().shape({
     fullName: yup.string().min(3).max(50).required('Must be filled in'),
     email: yup.string().email().required('Must be filled in'),
-    phoneNumber: yup.string().min(8).max(8).required('Must be filled in'),
+    phoneNumber: yup.string().min(10).max(10).required('Must be filled in'),
   });
 
   const {
@@ -40,17 +45,23 @@ function BookTrialLessonForm() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(ValidationSchema) });
 
-  function logIn() {
+  function onSubmit() {
+    dispatch(setBookModalOpen(false));
+    enableScroll();
+    toast.success('Order is placed!');
+    dispatch(setLoginModalOpen(false));
     reset();
   }
 
   function handleCloseByX() {
     dispatch(setBookModalOpen(false));
+    enableScroll();
   }
 
   function handleCloseByDrop(event) {
     if (event.target === event.currentTarget) {
       dispatch(setBookModalOpen(false));
+      enableScroll();
     }
   }
 
@@ -81,7 +92,7 @@ function BookTrialLessonForm() {
           What is your main reason for learning English?
         </p>
 
-        <form className={css.loginForm} onSubmit={handleSubmit(logIn)}>
+        <form className={css.loginForm} onSubmit={handleSubmit(onSubmit)}>
           <div className={css.radioButtons}>
             <label className={css.radioLabel}>
               <input

@@ -9,6 +9,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { signInUser } from '../../redux/auth/operations';
 import toast from 'react-hot-toast';
+import { enableScroll } from '../utils';
 
 function LoginModal() {
   const dispatch = useDispatch();
@@ -52,17 +53,20 @@ function LoginModal() {
         dispatch(setLoginModalOpen(false));
       }
     );
+    enableScroll();
 
     reset();
   }
 
   function handleCloseByX() {
     dispatch(setLoginModalOpen(false));
+    enableScroll();
   }
 
   function handleCloseByDrop(event) {
     if (event.target === event.currentTarget) {
       dispatch(setLoginModalOpen(false));
+      enableScroll();
     }
   }
 

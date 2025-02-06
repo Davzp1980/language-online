@@ -195,6 +195,10 @@
   color: #121417;
 }
 
+.submitBtn:hover {
+  background-color: #ffdc86;
+}
+
 .closeBtn {
   border: none;
   background-color: transparent;

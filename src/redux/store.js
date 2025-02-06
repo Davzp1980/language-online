@@ -22,7 +22,6 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     teachers: persistReducer(authPersistConfig, teachersReducer),
-    // filters: persistReducer(authPersistConfig, filterReducer),
     auth: authReducer,
   },
   middleware: getDefaultMiddleware =>
