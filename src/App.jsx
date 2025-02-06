@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router';
 import Header from './components/Header/Header';
-
+// import Home from './pages/Home/Home';
+import Teachers from './pages/Teachers/Teachers';
+import FavoritePage from './pages/FavoritePage/FavoritePage';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { lazy, useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import LoginModal from './components/LoginModal/LoginModal';
 import {
   selectIsLoginModalOpen,
@@ -11,6 +13,7 @@ import {
 } from './redux/teachers/selectors';
 import RegisterModal from './components/RegisterModal/RegisterModal';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+
 import { Toaster } from 'react-hot-toast';
 
 import { onAuthStateChanged } from 'firebase/auth';
@@ -19,8 +22,8 @@ import { auth } from './firebaseConfig';
 import { PrivateRoute } from './components/PrivateRouter';
 
 const Home = lazy(() => import('./pages/Home/Home'));
-const Teachers = lazy(() => import('./pages/Teachers/Teachers'));
-const FavoritePage = lazy(() => import('./pages/FavoritePage/FavoritePage'));
+// const Teachers = lazy(() => import('./pages/Teachers/Teachers'));
+// const FavoritePage = lazy(() => import('./pages/FavoritePage/FavoritePage'));
 
 function App() {
   const isOpenLoginModal = useSelector(selectIsLoginModalOpen);
@@ -50,17 +53,19 @@ function App() {
         <Header />
       </header>
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/teachers" element={<Teachers />} />
-          <Route
-            path="/favorite"
-            element={
-              <PrivateRoute redirectTo="/" component={<FavoritePage />} />
-            }
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/teachers" element={<Teachers />} />
+            <Route
+              path="/favorite"
+              element={
+                <PrivateRoute redirectTo="/" component={<FavoritePage />} />
+              }
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </main>
       {isOpenLoginModal && <LoginModal />}
       {isOpenRegisterModal && <RegisterModal />}
