@@ -1,8 +1,5 @@
 import { Route, Routes } from 'react-router';
 import Header from './components/Header/Header';
-// import Home from './pages/Home/Home';
-import Teachers from './pages/Teachers/Teachers';
-import FavoritePage from './pages/FavoritePage/FavoritePage';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { lazy, Suspense, useEffect } from 'react';
@@ -22,8 +19,8 @@ import { auth } from './firebaseConfig';
 import { PrivateRoute } from './components/PrivateRouter';
 
 const Home = lazy(() => import('./pages/Home/Home'));
-// const Teachers = lazy(() => import('./pages/Teachers/Teachers'));
-// const FavoritePage = lazy(() => import('./pages/FavoritePage/FavoritePage'));
+const Teachers = lazy(() => import('./pages/Teachers/Teachers'));
+const FavoritePage = lazy(() => import('./pages/FavoritePage/FavoritePage'));
 
 function App() {
   const isOpenLoginModal = useSelector(selectIsLoginModalOpen);
