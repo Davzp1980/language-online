@@ -51,7 +51,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/teachers" element={<Teachers />} />
-          <Route path="/login" element={<LoginModal />} />
           <Route
             path="/favorite"
             element={
