@@ -96,6 +96,11 @@
   line-height: 137%;
 }
 
+.inputEmail:hover,
+.inputPassword:hover {
+  border: 1px solid #f4c550;
+}
+
 .radioButtons {
   display: flex;
   flex-direction: column;

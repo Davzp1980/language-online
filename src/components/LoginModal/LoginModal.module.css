@@ -59,6 +59,14 @@
   line-height: 137%;
 }
 
+.inputEmail:hover {
+  border: 1px solid #f4c550;
+}
+
+.inputPassword:hover {
+  border: 1px solid #f4c550;
+}
+
 .inputEmail::placeholder,
 .inputPassword::placeholder {
   color: #121417;

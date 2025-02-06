@@ -164,6 +164,10 @@
   margin-bottom: 32px;
 }
 
+.readMoreBtn:hover {
+  text-decoration: none;
+}
+
 .levelsList {
   display: flex;
   gap: 8px;

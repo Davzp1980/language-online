@@ -57,8 +57,10 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 137%;
-
-  /* margin-bottom: 16px; */
+}
+.inputEmail:hover,
+.inputPassword:hover {
+  border: 1px solid #f4c550;
 }
 
 .inputEmail::placeholder,
